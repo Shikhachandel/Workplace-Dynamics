@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D3.js Graphs</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        .header {
+            font-weight: bold;
+            text-align: center;
+            color: #2c3e50; /* Dark color for text */
+            padding: 20px 40px; /* Spacing around the text */
+            max-width: 90%; /* Prevent header from stretching too wide */
+            word-wrap: break-word; /* Ensures the text wraps if it's too long */
+        }
+        
+        /* Sticky filter */
+        .filter {
+            position: -webkit-sticky; /* For Safari */
+            position: sticky;
+            top: 0; /* Sticks to the top of the viewport when scrolled */
+            background-color: #fff; /* White background to stand out */
+            padding: 10px 20px; /* Padding around the filter */
+            border: 1px solid #ccc; /* Light border for separation */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+            z-index: 1000; /* Ensures it stays on top of other content */
+        }
+
+        /* Style the label */
+        .filter label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* Style the select dropdown */
+        .filter select {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .chart-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+        }
+        svg {
+            background: #f4f4f4;
+            border: 1px solid #ccc;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1 class="header">Mental Health In Work Environment </h1>
+    <div class = "filter">
+        <label for="gender-filter">Filter by Gender:</label>
+        <select id="gender-filter"></select>
+    </div>
+    <!-- <div>
+        <label for="year-filter">Year:</label>
+        <select id="year-filter"></select>
+    </div>  -->
+    <div class="chart-container">
+        <svg id="chart" width="1500" height="3000"></svg>
+        <div id="tooltip" style="
+            position: absolute;
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 5px;
+            border-radius: 5px;
+            pointer-events: none;
+            opacity: 0;
+            font-size: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);">
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
